@@ -1,0 +1,24 @@
+'name': 'SSP (SuiteScript Server Page)'
+'scopeName': 'source.sca.ssp'
+'fileTypes': [
+  'ssp'
+]
+'patterns': [
+  {
+    'include': 'text.html.basic'
+  }
+  {
+    'begin': '<%'
+    'captures':
+     '1':
+       'name': 'entity.name.tag.sca.ssp'
+    'end': '%>'
+    'name': 'source.js.sca.ssp'
+    'contentName': 'source.embedded.js'
+    'patterns': [
+      {
+       'include': 'source.js'
+      }
+    ]
+  }
+]

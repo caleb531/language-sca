@@ -1,0 +1,11 @@
+{
+  "name": "language-sca",
+  "version": "0.1.0",
+  "description": "SuiteCommerce Advanced language support in Atom",
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/caleb531/language-sca"
+}
