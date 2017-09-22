@@ -1,4 +1,4 @@
-'name': 'SSP (SuiteScript Server Page)'
+'name': 'SCA SSP'
 'scopeName': 'source.sca.ssp'
 'fileTypes': [
   'ssp'
