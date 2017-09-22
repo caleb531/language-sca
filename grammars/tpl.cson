@@ -1,0 +1,25 @@
+'name': 'SCA Template'
+'scopeName': 'text.html.sca.tpl'
+'fileTypes': [
+  'tpl'
+]
+'patterns': [
+  {
+    'include': 'text.html.mustache'
+  }
+  {
+    'include': 'text.html.mustache#comment'
+  }
+  {
+    'include': 'text.html.mustache#block-expression-start'
+  }
+  {
+    'include': 'text.html.mustache#block-expression-end'
+  }
+  {
+    'include': 'text.html.mustache#escape'
+  }
+  {
+    'include': 'text.html.mustache#template'
+  }
+]
