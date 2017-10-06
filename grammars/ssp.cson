@@ -1,4 +1,4 @@
-'name': 'SCA SSP'
+'name': 'SCA Server Page'
 'scopeName': 'source.sca.ssp'
 'fileTypes': [
   'ssp'
