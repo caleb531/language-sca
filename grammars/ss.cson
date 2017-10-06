@@ -1,0 +1,10 @@
+'name': 'SCA Service'
+'scopeName': 'source.sca.ss'
+'fileTypes': [
+  'ss'
+]
+'patterns': [
+  {
+    'include': 'source.js'
+  }
+]
