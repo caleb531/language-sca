@@ -17,7 +17,7 @@
     'contentName': 'source.embedded.js'
     'patterns': [
       {
-       'include': 'source.js'
+        'include': 'source.js'
       }
     ]
   }
