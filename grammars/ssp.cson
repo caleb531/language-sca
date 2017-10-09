@@ -14,7 +14,7 @@
        'name': 'entity.name.tag.sca.ssp'
     'end': '%>'
     'name': 'source.js.sca.ssp'
-    'contentName': 'source.embedded.js'
+    'contentName': 'source.js.embedded.sca.ssp'
     'patterns': [
       {
         'include': 'source.js'
