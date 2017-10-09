@@ -1,5 +1,5 @@
 'name': 'SCA Server Page'
-'scopeName': 'source.sca.ssp'
+'scopeName': 'text.html.sca.ssp'
 'fileTypes': [
   'ssp'
 ]
