@@ -5,7 +5,7 @@
 ]
 'patterns': [
   {
-    'include': 'text.html.basic'
+    'include': 'text.html.sca.tpl'
   }
   {
     'begin': '<%'
