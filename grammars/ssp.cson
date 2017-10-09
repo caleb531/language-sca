@@ -8,13 +8,13 @@
     'include': 'text.html.sca.tpl'
   }
   {
-    'begin': '<%='
+    'begin': '(<%=)'
     'beginCaptures':
-      '0':
+      '1':
         'name': 'entity.name.tag.sca.ssp'
-    'end': '%>'
+    'end': '(%>)'
     'endCaptures':
-      '0':
+      '1':
         'name': 'entity.name.tag.sca.ssp'
     'name': 'source.js.sca.ssp'
     'contenName': 'source.js.embedded.sca.ssp'
@@ -25,14 +25,16 @@
     ]
   }
   {
-    'begin': '<%'
+    'begin': '(<%)'
     'beginCaptures':
-      '0':
+      '1':
         'name': 'entity.name.tag.sca.ssp'
-    'end': '([^{]\\{)|([^}]\\})'
+    'end': '([^{]\\{|[^}]\\})|(%>)'
     'endCaptures':
-      '0':
+      '1':
         'name': 'meta.brace.curly.js'
+      '2':
+        'name': 'entity.name.tag.sca.ssp'
     'name': 'source.js.sca.ssp'
     'contenName': 'source.js.embedded.sca.ssp'
     'patterns': [
@@ -43,9 +45,9 @@
   }
   {
     'begin': '(?<=([^{]\\{)|([^}]\\}))'
-    'end': '%>'
+    'end': '(%>)'
     'endCaptures':
-      '0':
+      '1':
         'name': 'entity.name.tag.sca.ssp'
     'name': 'source.js.sca.ssp'
     'contenName': 'source.js.embedded.sca.ssp'
