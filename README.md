@@ -12,4 +12,4 @@ pull request to add snippets, make grammar tweaks, etc.
 
 - SCA Templates (`*.tpl`)
 - SuiteScript Server Pages (`*.ssp`)
-- SuiteScript Service (`*.ss`)
+- SuiteScript Services (`*.ss`)
