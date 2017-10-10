@@ -49,3 +49,10 @@ describe "SSP grammar", ->
     expect(tokens[2]).toEqual value: 'var', scopes: ['text.html.sca.ssp', 'meta.embedded.sca.ssp', 'storage.type.var.js']
     expect(tokens[7]).toEqual value: 'foo', scopes: ['text.html.sca.ssp', 'meta.embedded.sca.ssp', 'string.quoted.double.js']
     expect(tokens[11]).toEqual value: '%>', scopes: ['text.html.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+
+  it "tokenizes Mustache tags", ->
+    {tokens} = grammar.tokenizeLine '{{#if foo}}'
+    expect(tokens[0]).toEqual value: '{{', scopes: ['text.html.sca.ssp', 'meta.tag.template.mustache', 'entity.name.tag.mustache']
+    expect(tokens[1]).toEqual value: '#', scopes: ['text.html.sca.ssp', 'meta.tag.template.mustache', 'entity.name.tag.mustache', 'punctuation.definition.block.begin.mustache']
+    expect(tokens[2]).toEqual value: 'if', scopes: ['text.html.sca.ssp', 'meta.tag.template.mustache', 'entity.name.tag.mustache', 'entity.name.function.mustache']
+    expect(tokens[4]).toEqual value: '}}', scopes: ['text.html.sca.ssp', 'meta.tag.template.mustache', 'entity.name.tag.mustache']
