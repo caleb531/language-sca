@@ -1,5 +1,5 @@
 'name': 'SCA Service'
-'scopeName': 'source.sca.ss'
+'scopeName': 'source.js.sca.ss'
 'fileTypes': [
   'ss'
 ]
