@@ -1,5 +1,5 @@
 'name': 'SCA Template'
-'scopeName': 'text.html.sca.tpl'
+'scopeName': 'text.html.mustache.sca.tpl'
 'fileTypes': [
   'tpl'
 ]
