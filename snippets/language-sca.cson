@@ -1,0 +1,29 @@
+'.text.html.mustache.sca.tpl':
+
+  'if':
+    'prefix': 'if'
+    'body': '{{#if ${1:condition}}}\n\t$2\n{{/if}}'
+
+  'ifelse':
+    'prefix': 'ifelse'
+    'body': '{{#if ${1:condition}}}\n\t$2\n{{else}}\n\t$3\n{{/if}}'
+
+  'ifelseif':
+    'prefix': 'ifelseif'
+    'body': '{{#if ${1:condition}}}\n\t$2\n{{else if ${3:condition}}}\n\t$4\n{{/if}}'
+
+  'ifelseifelse':
+    'prefix': 'ifelseifelse'
+    'body': '{{#if ${1:condition}}}\n\t$2\n{{else if ${3:condition}}}\n\t$4\n{{else}}\n\t$5\n{{/if}}'
+
+  'unless':
+    'prefix': 'unless'
+    'body': '{{#unless ${1:condition}}}\n\t$2\n{{/unless}}'
+
+  'each':
+    'prefix': 'each'
+    'body': '{{#each ${1:object}}}\n\t$2\n{{/each}}'
+
+  'with':
+    'prefix': 'with'
+    'body': '{{#with ${1:object}}}\n\t$2\n{{/with}}'
