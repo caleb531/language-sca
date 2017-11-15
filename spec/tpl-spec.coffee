@@ -18,9 +18,9 @@ describe "TPL grammar", ->
 
   it "tokenizes HTML", ->
     {tokens} = grammar.tokenizeLine '<meta charset="UTF-8">'
-    expect(tokens[1]).toEqual value: 'meta', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.inline.any.html', 'entity.name.tag.inline.any.html']
-    expect(tokens[3]).toEqual value: 'charset', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.inline.any.html', 'entity.other.attribute-name.html']
-    expect(tokens[6]).toEqual value: 'UTF-8', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.inline.any.html', 'string.quoted.double.html']
+    expect(tokens[1]).toEqual value: 'meta', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.inline.meta.html', 'entity.name.tag.inline.meta.html']
+    expect(tokens[3]).toEqual value: 'charset', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.inline.meta.html', 'meta.attribute-with-value.html', 'entity.other.attribute-name.html']
+    expect(tokens[6]).toEqual value: 'UTF-8', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.inline.meta.html', 'meta.attribute-with-value.html', 'string.quoted.double.html']
 
   it "tokenizes Mustache tags", ->
     {tokens} = grammar.tokenizeLine '{{#if foo}}'
