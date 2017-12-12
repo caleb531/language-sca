@@ -11,6 +11,12 @@
     'include': 'text.html.mustache#comment'
   }
   {
+    'include': 'text.html.mustache#block-comment'
+  }
+  {
+    'include': 'text.html.mustache#inline-comment'
+  }
+  {
     'include': 'text.html.mustache#block-expression-start'
   }
   {
