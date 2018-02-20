@@ -1,6 +1,6 @@
 {
   "name": "language-sca",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "SuiteCommerce Advanced language support in Atom",
   "engines": {
     "atom": "*",
