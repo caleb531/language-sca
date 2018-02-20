@@ -37,6 +37,12 @@ describe "SSP grammar", ->
     expect(tokens[2]).toEqual value: 'if', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.js']
     expect(tokens[10]).toEqual value: '%>', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
 
+  it "tokenizes <% %> tags with unclosed block (no space)", ->
+    {tokens} = grammar.tokenizeLine '<% if (foo){ %>'
+    expect(tokens[0]).toEqual value: '<%', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+    expect(tokens[2]).toEqual value: 'if', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.js']
+    expect(tokens[9]).toEqual value: '%>', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+
   it "tokenizes <% %> tags with closed block", ->
     {tokens} = grammar.tokenizeLine '<% if (foo) {} %>'
     expect(tokens[0]).toEqual value: '<%', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']

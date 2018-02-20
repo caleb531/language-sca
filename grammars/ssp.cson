@@ -12,7 +12,7 @@
     'beginCaptures':
       '1':
         'name': 'entity.name.tag.sca.ssp'
-    'end': '[^\\{](\\{)|[^\\}](\\})|(%>)'
+    'end': '[^\\{]?(\\{)|[^\\}]?(\\})|(%>)'
     'endCaptures':
       '1':
         'name': 'meta.brace.curly.js'
