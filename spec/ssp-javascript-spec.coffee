@@ -1,4 +1,4 @@
-describe "SSP (environment) grammar", ->
+describe "SSP grammar (JavaScript)", ->
   grammar = null
 
   beforeEach ->
