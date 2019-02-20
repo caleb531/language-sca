@@ -5,9 +5,6 @@
 ]
 'patterns': [
   {
-    'include': 'text.html.mustache.sca.tpl'
-  }
-  {
     'begin': '(<%=?)'
     'beginCaptures':
       '1':
@@ -41,5 +38,8 @@
         'include': 'source.js'
       }
     ]
+  }
+  {
+    'include': 'text.html.mustache.sca.tpl'
   }
 ]
