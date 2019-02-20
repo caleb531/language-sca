@@ -1,7 +1,7 @@
-'name': 'SCA Server Page'
-'scopeName': 'text.html.mustache.sca.ssp'
+'name': 'SCA Server Page (JavaScript)'
+'scopeName': 'source.js.sca.ssp'
 'fileTypes': [
-  'ssp'
+  'environment.ssp'
 ]
 'patterns': [
   {
@@ -40,6 +40,6 @@
     ]
   }
   {
-    'include': 'text.html.mustache.sca.tpl'
+    'include': 'source.js'
   }
 ]
