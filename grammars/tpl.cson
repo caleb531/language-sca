@@ -4,7 +4,7 @@
   'tpl'
 ]
 'injections':
-  'L:text.html.mustache - (meta.tag.template.mustache | comment.block)':
+  'L:text.html.mustache.sca.tpl - (meta.tag.template.mustache | comment.block)':
     'patterns': [
       {
         'include': 'text.html.mustache#comment'
