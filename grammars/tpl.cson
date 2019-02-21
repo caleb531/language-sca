@@ -3,29 +3,33 @@
 'fileTypes': [
   'tpl'
 ]
+'injections':
+  'L:text.html.mustache - (meta.tag.template.mustache | comment.block)':
+    'patterns': [
+      {
+        'include': 'text.html.mustache#comment'
+      }
+      {
+        'include': 'text.html.mustache#block-comment'
+      }
+      {
+        'include': 'text.html.mustache#inline-comment'
+      }
+      {
+        'include': 'text.html.mustache#block-expression-start'
+      }
+      {
+        'include': 'text.html.mustache#block-expression-end'
+      }
+      {
+        'include': 'text.html.mustache#escape'
+      }
+      {
+        'include': 'text.html.mustache#template'
+      }
+    ]
 'patterns': [
   {
-    'include': 'text.html.mustache'
-  }
-  {
-    'include': 'text.html.mustache#comment'
-  }
-  {
-    'include': 'text.html.mustache#block-comment'
-  }
-  {
-    'include': 'text.html.mustache#inline-comment'
-  }
-  {
-    'include': 'text.html.mustache#block-expression-start'
-  }
-  {
-    'include': 'text.html.mustache#block-expression-end'
-  }
-  {
-    'include': 'text.html.mustache#escape'
-  }
-  {
-    'include': 'text.html.mustache#template'
+    'include': 'text.html.basic'
   }
 ]
