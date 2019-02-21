@@ -25,15 +25,15 @@ describe "SSP grammar (HTML)", ->
     expect(tokens[6]).toEqual value: 'UTF-8', scopes: ['text.html.mustache.sca.ssp', 'meta.tag.inline.meta.html', 'meta.attribute-with-value.html', 'string.quoted.double.html']
 
   it "tokenizes <script> tags", ->
-    {tokens} = grammar.tokenizeLine '<script> var foo = "foo"; </script>'
+    {tokens} = grammar.tokenizeLine '<script> var foo = {}; </script>'
     expect(tokens[0]).toEqual value: '<', scopes: ['text.html.mustache.sca.ssp', 'meta.tag.script.html', 'punctuation.definition.tag.html']
     expect(tokens[1]).toEqual value: 'script', scopes: ['text.html.mustache.sca.ssp', 'meta.tag.script.html', 'entity.name.tag.script.html']
     expect(tokens[2]).toEqual value: '>', scopes: ['text.html.mustache.sca.ssp', 'meta.tag.script.html', 'punctuation.definition.tag.html']
     expect(tokens[4]).toEqual value: 'var', scopes: ['text.html.mustache.sca.ssp', 'meta.tag.script.html', 'source.js.embedded.html', 'storage.type.var.js']
-    expect(tokens[9]).toEqual value: 'foo', scopes: ['text.html.mustache.sca.ssp', 'meta.tag.script.html', 'source.js.embedded.html', 'string.quoted.double.js']
-    expect(tokens[13]).toEqual value: '</', scopes: ['text.html.mustache.sca.ssp', 'meta.tag.script.html', 'punctuation.definition.tag.html']
-    expect(tokens[14]).toEqual value: 'script', scopes: ['text.html.mustache.sca.ssp', 'meta.tag.script.html', 'entity.name.tag.script.html']
-    expect(tokens[15]).toEqual value: '>', scopes: ['text.html.mustache.sca.ssp', 'meta.tag.script.html', 'punctuation.definition.tag.html']
+    expect(tokens[8]).toEqual value: '{', scopes: ['text.html.mustache.sca.ssp', 'meta.tag.script.html', 'source.js.embedded.html', 'punctuation.section.scope.begin.js']
+    expect(tokens[12]).toEqual value: '</', scopes: ['text.html.mustache.sca.ssp', 'meta.tag.script.html', 'punctuation.definition.tag.html']
+    expect(tokens[13]).toEqual value: 'script', scopes: ['text.html.mustache.sca.ssp', 'meta.tag.script.html', 'entity.name.tag.script.html']
+    expect(tokens[14]).toEqual value: '>', scopes: ['text.html.mustache.sca.ssp', 'meta.tag.script.html', 'punctuation.definition.tag.html']
 
   it "tokenizes <%= %> tags", ->
     {tokens} = grammar.tokenizeLine '<%= var foo = "foo"; %>'
