@@ -7,25 +7,7 @@
   'L:text.html.mustache.sca.ssp - (meta.tag.template.mustache | comment.block | meta.embedded.sca.ssp)':
     'patterns': [
       {
-        'include': 'text.html.mustache#comment'
-      }
-      {
-        'include': 'text.html.mustache#block-comment'
-      }
-      {
-        'include': 'text.html.mustache#inline-comment'
-      }
-      {
-        'include': 'text.html.mustache#block-expression-start'
-      }
-      {
-        'include': 'text.html.mustache#block-expression-end'
-      }
-      {
-        'include': 'text.html.mustache#escape'
-      }
-      {
-        'include': 'text.html.mustache#template'
+        'include': 'text.html.mustache#mustache'
       }
     ]
 'patterns': [
