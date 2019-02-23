@@ -7,8 +7,9 @@
 
 Adds syntax highlighting to NetSuite's SuiteCommerce Advanced files in Atom.
 
-This package requires that Atom's built-in `language-mustache` package is
-enabled for syntax highlighting to work properly, so please make sure it is.
+This package requires that Atom's built-in `language-mustache`, `language-html`,
+and `language-javascript` packages be enabled for syntax highlighting to work
+properly, so please make sure they are.
 
 Contributions are greatly appreciated. Please fork this repository and open a
 pull request to add snippets, make grammar tweaks, etc.
