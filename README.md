@@ -18,3 +18,12 @@ pull request to add snippets, make grammar tweaks, etc.
 - SCA Templates (`*.tpl`)
 - SuiteScript Server Pages (`*.ssp`)
 - SuiteScript Services (`*.ss`)
+
+## Installation
+
+You can install language-sca through the Atom Settings screen, or via the
+command line:
+
+```
+apm install language-sca
+```
