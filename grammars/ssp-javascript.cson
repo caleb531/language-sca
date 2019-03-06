@@ -18,7 +18,7 @@
       '3':
         'name': 'entity.name.tag.sca.ssp'
     'name': 'meta.embedded.sca.ssp'
-    'contenName': 'source.js.embedded.sca.ssp'
+    'contentName': 'source.js.embedded.sca.ssp'
     'patterns': [
       {
         'include': 'source.js'
@@ -32,7 +32,7 @@
       '1':
         'name': 'entity.name.tag.sca.ssp'
     'name': 'meta.embedded.sca.ssp'
-    'contenName': 'source.js.embedded.sca.ssp'
+    'contentName': 'source.js.embedded.sca.ssp'
     'patterns': [
       {
         'include': 'source.js'
