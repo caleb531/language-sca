@@ -16,7 +16,7 @@
     'beginCaptures':
       '1':
         'name': 'entity.name.tag.sca.ssp'
-    'end': '(%>)|(?:(\\{)\\s*?(%>))|(?:(\\})\\s*?(%>))'
+    'end': '(%>)|(?:(\\{)\\s*(%>))|(?:(\\})\\s*(%>))'
     'endCaptures':
       '1':
         'name': 'entity.name.tag.sca.ssp'
