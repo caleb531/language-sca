@@ -9,33 +9,33 @@
       {
         'include': 'text.html.mustache#mustache'
       }
-    ]
-'patterns': [
-  {
-    'begin': '(<%=?)'
-    'beginCaptures':
-      '1':
-        'name': 'entity.name.tag.sca.ssp'
-    'end': '(%>)|(?:(\\{)\\s*(%>))|(?:(\\})\\s*(%>))'
-    'endCaptures':
-      '1':
-        'name': 'entity.name.tag.sca.ssp'
-      '2':
-        'name': 'meta.brace.curly.js'
-      '3':
-        'name': 'entity.name.tag.sca.ssp'
-      '4':
-        'name': 'meta.brace.curly.js'
-      '5':
-        'name': 'entity.name.tag.sca.ssp'
-    'name': 'meta.embedded.sca.ssp'
-    'contentName': 'source.js.embedded.sca.ssp'
-    'patterns': [
       {
-        'include': 'source.js'
+        'begin': '(<%=?)'
+        'beginCaptures':
+          '1':
+            'name': 'entity.name.tag.sca.ssp'
+        'end': '(%>)|(?:(\\{)\\s*(%>))|(?:(\\})\\s*(%>))'
+        'endCaptures':
+          '1':
+            'name': 'entity.name.tag.sca.ssp'
+          '2':
+            'name': 'meta.brace.curly.js'
+          '3':
+            'name': 'entity.name.tag.sca.ssp'
+          '4':
+            'name': 'meta.brace.curly.js'
+          '5':
+            'name': 'entity.name.tag.sca.ssp'
+        'name': 'meta.embedded.sca.ssp'
+        'contentName': 'source.js.embedded.sca.ssp'
+        'patterns': [
+          {
+            'include': 'source.js'
+          }
+        ]
       }
     ]
-  }
+'patterns': [
   {
     'include': 'text.html.basic'
   }
