@@ -54,6 +54,12 @@ describe 'SSP grammar (JavaScript)', ->
     expect(tokens[7]).toEqual value: 'foo', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'string.quoted.double.js']
     expect(tokens[11]).toEqual value: '%>', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
 
+  it 'tokenizes end %> tag for closing <% %> line', ->
+    {tokens} = grammar.tokenizeLine '<% } %>'
+    expect(tokens[0]).toEqual value: '<%', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
+    expect(tokens[2]).toEqual value: '}', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'meta.brace.curly.js']
+    expect(tokens[4]).toEqual value: '%>', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
+
   it 'tokenizes <% tags following curly braces', ->
     {tokens} = grammar.tokenizeLine '<% if (Error) { %> if (true) {} <% } %>'
     expect(tokens[21]).toEqual value: '<%', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']

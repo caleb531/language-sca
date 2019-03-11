@@ -8,7 +8,7 @@
     'beginCaptures':
       '1':
         'name': 'keyword.control.directive.sca.ssp'
-    'end': '(%>)|((\\{))\\s*(%>)|(\\})\\s*(%>)'
+    'end': '(%>)|((\\{))\\s*(%>)|((\\}))\\s*(%>)'
     'endCaptures':
       '1':
         'name': 'keyword.control.directive.sca.ssp'
