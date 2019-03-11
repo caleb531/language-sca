@@ -4,7 +4,7 @@
   'ssp'
 ]
 'injections':
-  'L:text.html.mustache.sca.ssp - (meta.tag.template.mustache | comment.block | meta.embedded.sca.ssp)':
+  'L:text.html.mustache.sca.ssp - (meta.tag.template.mustache | meta.embedded.sca.ssp | comment.block)':
     'patterns': [
       {
         'include': 'text.html.mustache#mustache'
