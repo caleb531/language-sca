@@ -37,22 +37,22 @@ describe 'SSP grammar (HTML)', ->
 
   it 'tokenizes <%= %> tags', ->
     {tokens} = grammar.tokenizeLine '<%= var foo = "foo"; %>'
-    expect(tokens[0]).toEqual value: '<%=', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+    expect(tokens[0]).toEqual value: '<%=', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
     expect(tokens[2]).toEqual value: 'var', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'storage.type.var.js']
     expect(tokens[7]).toEqual value: 'foo', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'string.quoted.double.js']
-    expect(tokens[11]).toEqual value: '%>', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+    expect(tokens[11]).toEqual value: '%>', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
 
   it 'tokenizes <% %> tags with unclosed block', ->
     {tokens} = grammar.tokenizeLine '<% if (foo) { %>'
-    expect(tokens[0]).toEqual value: '<%', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+    expect(tokens[0]).toEqual value: '<%', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
     expect(tokens[2]).toEqual value: 'if', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'keyword.control.js']
-    expect(tokens[10]).toEqual value: '%>', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+    expect(tokens[10]).toEqual value: '%>', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
 
   it 'tokenizes <% %> tags with unclosed block (no space)', ->
     {tokens} = grammar.tokenizeLine '<% if (foo){ %>'
-    expect(tokens[0]).toEqual value: '<%', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+    expect(tokens[0]).toEqual value: '<%', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
     expect(tokens[2]).toEqual value: 'if', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'keyword.control.js']
-    expect(tokens[9]).toEqual value: '%>', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+    expect(tokens[9]).toEqual value: '%>', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
 
   it 'tokenizes HTML following stray opening curly braces', ->
     {tokens} = grammar.tokenizeLine '<% %> { <div></div>'
@@ -64,16 +64,16 @@ describe 'SSP grammar (HTML)', ->
 
   it 'tokenizes <% %> tags with closed block', ->
     {tokens} = grammar.tokenizeLine '<% if (foo) {} %>'
-    expect(tokens[0]).toEqual value: '<%', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+    expect(tokens[0]).toEqual value: '<%', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
     expect(tokens[2]).toEqual value: 'if', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'keyword.control.js']
-    expect(tokens[11]).toEqual value: '%>', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+    expect(tokens[11]).toEqual value: '%>', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
 
   it 'tokenizes <% %> tags with non-block', ->
     {tokens} = grammar.tokenizeLine '<% var foo = "foo"; %>'
-    expect(tokens[0]).toEqual value: '<%', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+    expect(tokens[0]).toEqual value: '<%', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
     expect(tokens[2]).toEqual value: 'var', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'storage.type.var.js']
     expect(tokens[7]).toEqual value: 'foo', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'string.quoted.double.js']
-    expect(tokens[11]).toEqual value: '%>', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+    expect(tokens[11]).toEqual value: '%>', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
 
   it 'tokenizes Mustache tags', ->
     {tokens} = grammar.tokenizeLine '{{#if foo}}'
@@ -84,7 +84,7 @@ describe 'SSP grammar (HTML)', ->
 
   it 'does not tokenize Mustache tags within <% %> tags', ->
     {tokens} = grammar.tokenizeLine '<% {{foo}} %>'
-    expect(tokens[0]).toEqual value: '<%', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+    expect(tokens[0]).toEqual value: '<%', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
     expect(tokens[2]).toEqual value: '{', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'meta.brace.curly.js']
     expect(tokens[3]).toEqual value: '{', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'meta.brace.curly.js']
     expect(tokens[4]).toEqual value: 'foo', scopes: ['text.html.mustache.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp']
