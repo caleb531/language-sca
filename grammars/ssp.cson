@@ -1,0 +1,35 @@
+# This grammar does not define keys for 'name' or 'fileTypes' so that it can be
+# hidden; it's only meant to be available to the other grammars in this package
+# via 'include' rules
+'scopeName': 'source.sca.ssp'
+'patterns': [
+  {
+    'begin': '(<%=?)'
+    'beginCaptures':
+      '1':
+        'name': 'keyword.control.directive.sca.ssp'
+    'end': '(%>)|((\\{))\\s*(%>)|(\\})\\s*(%>)'
+    'endCaptures':
+      '1':
+        'name': 'keyword.control.directive.sca.ssp'
+      '2':
+        'name': 'source.js.embedded.sca.ssp'
+      '3':
+        'name': 'meta.brace.curly.js'
+      '4':
+        'name': 'keyword.control.directive.sca.ssp'
+      '5':
+        'name': 'source.js.embedded.sca.ssp'
+      '6':
+        'name': 'meta.brace.curly.js'
+      '7':
+        'name': 'keyword.control.directive.sca.ssp'
+    'name': 'meta.embedded.sca.ssp'
+    'contentName': 'source.js.embedded.sca.ssp'
+    'patterns': [
+      {
+        'include': 'source.js'
+      }
+    ]
+  }
+]
