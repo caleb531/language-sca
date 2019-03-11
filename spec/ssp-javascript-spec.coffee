@@ -43,7 +43,7 @@ describe 'SSP grammar (JavaScript)', ->
     {tokens} = grammar.tokenizeLine '<% if (foo) {} %>'
     expect(tokens[0]).toEqual value: '<%', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
     expect(tokens[2]).toEqual value: 'if', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'keyword.control.js']
-    expect(tokens[10]).toEqual value: '%>', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+    expect(tokens[11]).toEqual value: '%>', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
 
   it 'tokenizes <% %> tags with non-block', ->
     {tokens} = grammar.tokenizeLine '<% var foo = "foo"; %>'
@@ -51,3 +51,7 @@ describe 'SSP grammar (JavaScript)', ->
     expect(tokens[2]).toEqual value: 'var', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'storage.type.var.js']
     expect(tokens[7]).toEqual value: 'foo', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'string.quoted.double.js']
     expect(tokens[11]).toEqual value: '%>', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
+
+  it 'tokenizes <% tags following curly braces', ->
+    {tokens} = grammar.tokenizeLine '<% if (Error) { %> if (true) {} <% } %>'
+    expect(tokens[21]).toEqual value: '<%', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'entity.name.tag.sca.ssp']
