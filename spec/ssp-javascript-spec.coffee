@@ -31,12 +31,14 @@ describe 'SSP grammar (JavaScript)', ->
     {tokens} = grammar.tokenizeLine '<% if (foo) { %>'
     expect(tokens[0]).toEqual value: '<%', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
     expect(tokens[2]).toEqual value: 'if', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'keyword.control.js']
+    expect(tokens[8]).toEqual value: '{', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'meta.brace.curly.js']
     expect(tokens[10]).toEqual value: '%>', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
 
   it 'tokenizes <% %> tags with unclosed block (no space)', ->
     {tokens} = grammar.tokenizeLine '<% if (foo){ %>'
     expect(tokens[0]).toEqual value: '<%', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
     expect(tokens[2]).toEqual value: 'if', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'keyword.control.js']
+    expect(tokens[7]).toEqual value: '{', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'source.js.embedded.sca.ssp', 'meta.brace.curly.js']
     expect(tokens[9]).toEqual value: '%>', scopes: ['source.js.sca.ssp', 'meta.embedded.sca.ssp', 'keyword.control.directive.sca.ssp']
 
   it 'tokenizes <% %> tags with closed block', ->
