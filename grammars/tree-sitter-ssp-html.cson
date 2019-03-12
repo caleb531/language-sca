@@ -8,14 +8,6 @@ fileTypes: [
   'merchzone.txt'
 ]
 
-folds: [
-  {
-    type: ['directive', 'output_directive'],
-    start: {index: 0},
-    end: {index: -1}
-  }
-]
-
 comments:
   start: '<!--'
   end: '-->'
