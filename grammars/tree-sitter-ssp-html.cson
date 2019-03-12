@@ -1,0 +1,29 @@
+name: 'SCA Server Page (HTML)'
+scopeName: 'text.html.mustache.sca.ssp'
+type: 'tree-sitter'
+parser: 'tree-sitter-embedded-template'
+
+fileTypes: [
+  'ssp'
+  'merchzone.txt'
+]
+
+folds: [
+  {
+    type: ['directive', 'output_directive'],
+    start: {index: 0},
+    end: {index: -1}
+  }
+]
+
+comments:
+  start: '<!--'
+  end: '-->'
+
+scopes:
+  'comment_directive': 'comment.block'
+  'comment_directive > "%>"': 'comment.block'
+
+  '"<%"': 'keyword.control.directive'
+  '"<%="': 'keyword.control.directive'
+  '"%>"': 'keyword.control.directive'
