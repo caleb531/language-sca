@@ -2,6 +2,7 @@ describe 'SSP grammar (HTML)', ->
   grammar = null
 
   beforeEach ->
+    atom.config.set('core.useTreeSitterParsers', false)
     waitsForPromise ->
       atom.packages.activatePackage('language-javascript')
     waitsForPromise ->
