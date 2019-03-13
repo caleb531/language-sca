@@ -11,7 +11,6 @@
   "repository": "https://github.com/caleb531/language-sca",
   "dependencies": {
     "tree-sitter-embedded-template": "^0.13.0",
-    "tree-sitter-html": "^0.13.5",
-    "tree-sitter-javascript": "^0.13.10"
+    "tree-sitter-html": "^0.13.5"
   }
 }
