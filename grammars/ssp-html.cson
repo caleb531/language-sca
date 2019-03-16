@@ -2,7 +2,6 @@
 'scopeName': 'text.html.mustache.sca.ssp'
 'fileTypes': [
   'ssp'
-  'merchzone.txt'
 ]
 'injections':
   'L:text.html.mustache.sca.ssp - (meta.tag.template.mustache | meta.embedded.sca.ssp | comment.block)':

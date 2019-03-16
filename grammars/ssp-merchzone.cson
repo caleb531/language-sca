@@ -1,0 +1,34 @@
+# This grammar is effectively a fork of the SSP (HTML) grammar, except with the
+# JavaScript highlighting disabled; this is intentional because merchzone
+# templates often include unclosed JavaScript blocks, which invariably break
+# syntax highlighting; previously, I fixed this using a tree-sitter grammar,
+# however compilation issues led me to revert to the first-mate grammar
+'name': 'SCA Server Page (Merchzone)'
+'scopeName': 'text.html.sca.ssp.merchzone'
+'fileTypes': [
+  'merchzone.txt'
+]
+'injections':
+  'L:text.html.sca.ssp.merchzone - (meta.embedded.sca.ssp.merchzone | comment.block)':
+    'patterns': [
+      {
+        'begin': '(<%=?)'
+        'beginCaptures':
+          '1':
+            'name': 'keyword.control.directive.sca.ssp.merchzone'
+        'end': '(%>)'
+        'endCaptures':
+          '1':
+            'name': 'keyword.control.directive.sca.ssp.merchzone'
+        'name': 'meta.embedded.sca.ssp.merchzone'
+        'contentName': 'source.js.embedded.sca.ssp.merchzone'
+        'patterns': [
+          # 'include': 'source.js'
+        ]
+      }
+    ]
+'patterns': [
+  {
+    'include': 'text.html.basic'
+  }
+]
