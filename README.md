@@ -17,7 +17,7 @@ pull request to add snippets, make grammar tweaks, etc.
 ## Supported File Types
 
 - SCA Templates (`*.tpl`)
-- SuiteScript Server Pages (`*.ssp`, `merchzone.txt`)
+- SuiteScript Server Pages (`*.ssp`, `merchzone*.txt`)
 - SuiteScript Services (`*.ss`)
 
 ## Installation

@@ -7,6 +7,7 @@
 'scopeName': 'text.html.sca.ssp.merchzone'
 'fileTypes': [
   'merchzone.txt'
+  'merchzone_default.txt'
 ]
 'injections':
   'L:text.html.sca.ssp.merchzone - (meta.embedded.sca.ssp.merchzone | comment.block)':
