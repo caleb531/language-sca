@@ -27,3 +27,7 @@
   'with':
     'prefix': 'with'
     'body': '{{#with ${1:object}}}\n\t$2\n{{/with}}'
+
+  'ifEquals':
+    'prefix': 'ifequals'
+    'body': '{{#ifEquals ${1:object} ${2:value}}}\n\t$3\n{{/ifEquals}}'
