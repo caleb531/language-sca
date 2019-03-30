@@ -32,6 +32,12 @@
           '3':
             'name': 'punctuation.definition.string.end.mustache.sca.tpl'
       }
+      {
+        'match': '(?<={{)\\s*(\\w+)\\s+(?!}})'
+        'captures':
+          '1':
+            'name': 'storage.type.function.mustache.sca.tpl'
+      }
     ]
 'patterns': [
   {
