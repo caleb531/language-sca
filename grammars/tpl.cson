@@ -13,7 +13,7 @@
   'L:meta.tag.template.mustache - (comment.block)':
     'patterns': [
       {
-        'match': '(\')(.*?)(\')'
+        'match': '(\')((?:[^\'\\\\]|\\\\.)*)(\')'
         'captures':
           '1':
             'name': 'punctuation.definition.string.begin.mustache.sca.tpl'
@@ -23,7 +23,7 @@
             'name': 'punctuation.definition.string.end.mustache.sca.tpl'
       }
       {
-        'match': '(\")(.*?)(\")'
+        'match': '(\")((?:[^"\\\\]|\\\\.)*)(\")'
         'captures':
           '1':
             'name': 'punctuation.definition.string.begin.mustache.sca.tpl'

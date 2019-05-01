@@ -51,10 +51,26 @@ describe 'TPL grammar', ->
     expect(tokens[5]).toEqual value: '\'', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'punctuation.definition.string.end.mustache.sca.tpl']
     expect(tokens[6]).toEqual value: '}}', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache']
 
+  it 'tokenizes single-quoted strings (containing escaped quotes) within Mustache tags', ->
+    {tokens} = grammar.tokenizeLine '{{translate \'foo\\\'bar\'}}'
+    expect(tokens[0]).toEqual value: '{{', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache']
+    expect(tokens[3]).toEqual value: '\'', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'punctuation.definition.string.begin.mustache.sca.tpl']
+    expect(tokens[4]).toEqual value: 'foo\\\'bar', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'string.quoted.single.mustache.sca.tpl']
+    expect(tokens[5]).toEqual value: '\'', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'punctuation.definition.string.end.mustache.sca.tpl']
+    expect(tokens[6]).toEqual value: '}}', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache']
+
   it 'tokenizes double-quoted strings within Mustache tags', ->
     {tokens} = grammar.tokenizeLine '{{translate "foo"}}'
     expect(tokens[0]).toEqual value: '{{', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache']
     expect(tokens[3]).toEqual value: '"', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'punctuation.definition.string.begin.mustache.sca.tpl']
     expect(tokens[4]).toEqual value: 'foo', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'string.quoted.double.mustache.sca.tpl']
+    expect(tokens[5]).toEqual value: '"', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'punctuation.definition.string.end.mustache.sca.tpl']
+    expect(tokens[6]).toEqual value: '}}', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache']
+
+  it 'tokenizes double-quoted strings (containing escaped quotes) within Mustache tags', ->
+    {tokens} = grammar.tokenizeLine '{{translate "foo\\"bar"}}'
+    expect(tokens[0]).toEqual value: '{{', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache']
+    expect(tokens[3]).toEqual value: '"', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'punctuation.definition.string.begin.mustache.sca.tpl']
+    expect(tokens[4]).toEqual value: 'foo\\"bar', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'string.quoted.double.mustache.sca.tpl']
     expect(tokens[5]).toEqual value: '"', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'punctuation.definition.string.end.mustache.sca.tpl']
     expect(tokens[6]).toEqual value: '}}', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache']
