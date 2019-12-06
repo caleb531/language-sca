@@ -31,3 +31,7 @@
   'ifEquals':
     'prefix': 'ifequals'
     'body': '{{#ifEquals ${1:object} ${2:value}}}\n\t$3\n{{/ifEquals}}'
+
+  'unlessEquals':
+    'prefix': 'unlessequals'
+    'body': '{{#unlessEquals ${1:object} ${2:value}}}\n\t$3\n{{/unlessEquals}}'
