@@ -7,7 +7,32 @@
   'L:text.html.mustache.sca.tpl - (meta.tag.template.mustache | comment.block)':
     'patterns': [
       {
-        'include': 'text.html.mustache#mustache'
+        'include': 'text.html.mustache#block-comment'
+      }
+      {
+        'include': 'text.html.mustache#inline-comment'
+      }
+      {
+        'include': 'text.html.mustache#block-expression-start'
+      }
+      {
+        'include': 'text.html.mustache#block-expression-end'
+      }
+      {
+        'begin': '{{{[<>]?'
+        'end': '}}}'
+        'captures':
+          '0':
+            'name': 'entity.name.tag.mustache'
+        'name': 'meta.tag.template.mustache'
+      }
+      {
+        'begin': '{{[<>]?'
+        'end': '}}'
+        'captures':
+          '0':
+            'name': 'entity.name.tag.mustache'
+        'name': 'meta.tag.template.mustache'
       }
     ]
   'L:meta.tag.template.mustache - (comment.block)':
