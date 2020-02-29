@@ -1,6 +1,6 @@
 # language-sca for Atom
 
-*Copyright 2017-2019 Caleb Evans*  
+*Copyright 2017-2020 Caleb Evans*  
 *Released under the MIT license*
 
 [![Build Status](https://travis-ci.org/caleb531/language-sca.svg?branch=master)](https://travis-ci.org/caleb531/language-sca)
