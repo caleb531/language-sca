@@ -58,6 +58,22 @@
             'name': 'punctuation.definition.string.end.mustache.sca.tpl'
       }
       {
+        'match': '(?<={{)((else))(?=}})'
+        'captures':
+          '1':
+            'name': 'entity.name.tag.mustache'
+          '2':
+            'name': 'entity.name.function.mustache'
+      }
+      {
+        'match': '(?<={{)((else if))(?!}})'
+        'captures':
+          '1':
+            'name': 'entity.name.tag.mustache'
+          '2':
+            'name': 'entity.name.function.mustache'
+      }
+      {
         'match': '(?<={{)\\s*(\\w+)\\s+(?!}})'
         'captures':
           '1':

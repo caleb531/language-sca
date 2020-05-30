@@ -30,6 +30,18 @@ describe 'TPL grammar', ->
     expect(tokens[2]).toEqual value: 'if', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache', 'entity.name.function.mustache']
     expect(tokens[4]).toEqual value: '}}', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache']
 
+  it 'tokenizes else', ->
+    {tokens} = grammar.tokenizeLine '{{else}}'
+    expect(tokens[0]).toEqual value: '{{', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache']
+    expect(tokens[1]).toEqual value: 'else', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache', 'entity.name.function.mustache']
+    expect(tokens[2]).toEqual value: '}}', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache']
+
+  it 'tokenizes else if', ->
+    {tokens} = grammar.tokenizeLine '{{else if foo}}'
+    expect(tokens[0]).toEqual value: '{{', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache']
+    expect(tokens[1]).toEqual value: 'else if', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache', 'entity.name.function.mustache']
+    expect(tokens[3]).toEqual value: '}}', scopes: ['text.html.mustache.sca.tpl', 'meta.tag.template.mustache', 'entity.name.tag.mustache']
+
   it 'tokenizes Mustache comments', ->
     {tokens} = grammar.tokenizeLine '{{! comment }}'
     expect(tokens[0]).toEqual value: '{{!', scopes: ['text.html.mustache.sca.tpl', 'comment.block.mustache', 'punctuation.definition.comment.mustache']
