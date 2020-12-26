@@ -3,7 +3,7 @@
 *Copyright 2017-2020 Caleb Evans*  
 *Released under the MIT license*
 
-[![Build Status](https://travis-ci.org/caleb531/language-sca.svg?branch=master)](https://travis-ci.org/caleb531/language-sca)
+[![Build Status](https://travis-ci.com/caleb531/language-sca.svg?branch=master)](https://travis-ci.com/caleb531/language-sca)
 
 Adds syntax highlighting to NetSuite's SuiteCommerce Advanced files in Atom.
 
