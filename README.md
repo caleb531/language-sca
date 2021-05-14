@@ -19,6 +19,7 @@ pull request to add snippets, make grammar tweaks, etc.
 - SCA Templates (`*.tpl`)
 - SuiteScript Server Pages (`*.ssp`, `merchzone*.txt`)
 - SuiteScript Services (`*.ss`)
+- Token-Based Authentication File (`.nstba`)
 
 ## Installation
 

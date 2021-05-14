@@ -1,0 +1,10 @@
+'name': 'SCA TBA File'
+'scopeName': 'source.json.sca.nstba'
+'fileTypes': [
+  'nstba'
+]
+'patterns': [
+  {
+    'include': 'source.json'
+  }
+]
