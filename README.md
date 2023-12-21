@@ -1,3 +1,5 @@
+# \[NOTICE\]: The Atom editor has officially been sunsetted as of December 2022; see [GitHub's blog post](https://github.blog/2022-06-08-sunsetting-atom/)
+
 # language-sca for Atom
 
 *Copyright 2017-2021 Caleb Evans*  
